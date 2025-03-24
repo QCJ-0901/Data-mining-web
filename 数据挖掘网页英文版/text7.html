@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Intelligence Application Case Library</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --light-bg: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #ecf0f1;
+        }
+
+        * {
+            margin: 0.25rem;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            line-height: 1.7;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), #34495e);
+            color: var(--text-light);
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 20px 20px;
+        }
+
+        .main-content {
+            max-width: 1280px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .article {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .sidebar {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .content {
+            display: none;
+            margin-top: 1.2rem;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            animation: fadeIn 0.3s ease;
+        }
+
+        button {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background: #2980b9;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        pre {
+            background: #2c3e50;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        li {
+            margin: 0.8rem 0;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+            img {
+                height: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Data Intelligence Application Case Library</h1>
+        <p>Exploring Industry Practices in AI and Data Mining</p>
+    </header>
+
+    <div class="main-content">
+        <main class="article">
+            <section id="7">
+                <h2>Practical Work Assignment 7</h2>
+                <div class="card">
+                    <h3>Overview:</h3>
+                    <p>Error analysis based on predicted and actual values, calculating MAE and MAPE metrics.</p>
+                    
+                    <h3>Task Requirements:</h3>
+                    <ol>
+                        <li>Calculate absolute error</li>
+                        <li>Calculate Mean Absolute Error (MAE)</li>
+                        <li>Calculate Mean Absolute Percentage Error (MAPE)</li>
+                    </ol>
+
+                    <button id="toggleBtn1">Expand Content</button>
+                    <div id="content1" class="content">
+                        <div class="metric-calculation">
+                            <img src="img/7.1.png" alt="Error Calculation Process">
+                            <img src="img/7.2.png" alt="MAE/MAPE Results">
+                            <div class="formula-group">
+                                <pre><code>
+MAE = (Σ|Y-Y'|)/n
+MAPE = (Σ|(Y-Y')/Y|)/n × 100%
+
+Example Calculation:
+MAE = (2+1+3+0+1)/5 = 7/5 = 1.4
+MAPE = (0.5+0.2+0.6+0+0.14)/5 × 100% = 28.8%
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Overview:</h3>
+                    <p>Regression analysis based on multi-feature data, building linear and polynomial prediction models.</p>
+                    
+                    <h3>Task Requirements:</h3>
+                    <ul>
+                        <li>Establish a linear regression equation</li>
+                        <li>Build a polynomial regression model</li>
+                        <li>Compare model performance</li>
+                    </ul>
+
+                    <button id="toggleBtn2">Expand Content</button>
+                    <div id="content2" class="content">
+                        <div class="regression-models">
+                            <img src="img/7.3.png" alt="Linear Regression Formula">
+                            <div class="model-comparison">
+                                <pre><code>
+Linear Regression Equation:
+Y = 0.5X₁ + 1.2X₂ + 3.1
+
+Polynomial Regression Equation:
+Y = 0.3X₁² + 0.8X₂³ - 1.5X₁X₂ + 2.7
+                                </code></pre>
+                            </div>
+                            <img src="img/7.4.png" alt="Model Comparison">
+                            <img src="img/7.5.png" alt="Prediction Results">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <div class="card">
+                <h3>Core Technologies</h3>
+                <ul>
+                    <li>Regression Analysis</li>
+                    <li>Error Metrics</li>
+                    <li>Model Optimization</li>
+                    <li>Feature Engineering</li>
+                    <li>Predictive Modeling</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="header" style="margin-top:3rem; border-radius:12px;">
+      <p>&copy; 2025 Data Mining Popularization Station</p>
+       <p>Production Team: Qiu Chongjia, Li Haonan, Xia Haohan</p>
+    </footer>
+
+    <script>
+        function setupToggle(buttonId, contentId) {
+            const btn = document.getElementById(buttonId);
+            const content = document.getElementById(contentId);
+            
+            btn.addEventListener('click', () => {
+                const isVisible = content.style.display === 'block';
+                content.style.display = isVisible ? 'none' : 'block';
+                btn.textContent = isVisible ? 'Expand Content' : 'Collapse Content';
+            });
+        }
+
+        setupToggle('toggleBtn1', 'content1');
+        setupToggle('toggleBtn2', 'content2');
+    </script>
+</body>
+</html>

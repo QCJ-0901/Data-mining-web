@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Intelligence Application Case Library</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --light-bg: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #ecf0f1;
+        }
+
+        * {
+            margin: 0.25rem;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            line-height: 1.7;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), #34495e);
+            color: var(--text-light);
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 20px 20px;
+        }
+
+        .main-content {
+            max-width: 1280px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .article {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .sidebar {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .content {
+            display: none;
+            margin-top: 1.2rem;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            animation: fadeIn 0.3s ease;
+        }
+
+        button {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background: #2980b9;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        li {
+            margin: 0.8rem 0;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+            img {
+                height: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Data Intelligence Application Case Library</h1>
+        <p>Exploring Industry Practices in AI and Data Mining</p>
+    </header>
+
+    <div class="main-content">
+        <main class="article">
+            <section id="3">
+                <h2>Practical Work Assignment 3</h2>
+                <div class="card">
+                    <h3>Problem Overview:</h3>
+                    <p>Objects are defined by two features and represented as points on a two-dimensional plane. The task is to use the Support Vector Machine (SVM) algorithm to construct a separating hyperplane.</p>
+
+                    <h3>Task Requirements:</h3>
+                    <p>Use the Support Vector Machine (SVM) algorithm to construct a separating hyperplane. This hyperplane will separate objects of different classes for data classification.</p>
+
+                    <h3>Methods Used:</h3>
+                    <ul>
+                        <li><strong>Support Vector Machine (SVM) Algorithm</strong>: Classify data by finding the hyperplane with the maximum margin.</li>
+                        <li><strong>Separating Hyperplane</strong>: Divide data points in a two-dimensional space using a hyperplane.</li>
+                    </ul>
+                    <button id="toggleBtn1">Expand Content</button>
+                    <div id="content1" class="content">
+                        <div class="image-grid">
+                            <img src="img/text2.10.png" alt="SVM Diagram">
+                            <img src="img/text2.9.png" alt="Hyperplane Diagram">
+                            <img src="img/2.11.png" alt="Decision Boundary">
+                            <img src="img/2.12.png" alt="Maximizing Margin">
+                            <img src="img/2.13.png" alt="Support Vectors">
+                            <img src="img/2.14.png" alt="Classification Results">
+                            <img src="img/2.15.png" alt="Parameter Tuning">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Problem Overview:</h3>
+                    <p>Given a set of points, use a nonlinear Support Vector Machine (SVM) algorithm to solve the data classification problem. Nonlinear SVM maps data to a higher-dimensional space, enabling the separation of classes that cannot be divided by a linear hyperplane.</p>
+
+                    <h3>Task Requirements:</h3>
+                    <p>Propose suitable data points for the nonlinear SVM algorithm and classify them using the nonlinear SVM algorithm.</p>
+
+                    <h3>Methods Used:</h3>
+                    <ul>
+                        <li><strong>Nonlinear SVM Algorithm</strong>: Map data to a higher-dimensional space using kernel functions.</li>
+                        <li><strong>Kernel Functions</strong>: Use RBF and polynomial kernels.</li>
+                        <li><strong>High-Dimensional Space Mapping</strong>: Achieve linear separability of data.</li>
+                    </ul>
+
+                    <button id="toggleBtn2">Expand Content</button>
+                    <div id="content2" class="content">
+                        <div class="image-grid">
+                            <img src="img/2.16.png" alt="Nonlinear Data Distribution">
+                            <img src="img/2.17.png" alt="RBF Kernel Application">
+                            <img src="img/2.18.png" alt="High-Dimensional Mapping">
+                            <img src="img/3.1.png" alt="Decision Boundary">
+                            <img src="img/3.2.png" alt="Classification Results">
+                            <img src="img/3.3.png" alt="Parameter Impact">
+                            <img src="img/3.4.png" alt="Performance Comparison">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <div class="card">
+                <h3>Core Technologies</h3>
+                <ul>
+                    <li>Support Vector Machines</li>
+                    <li>Kernel Methods</li>
+                    <li>Pattern Recognition</li>
+                    <li>Optimization Algorithms</li>
+                    <li>Feature Engineering</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="header" style="margin-top:3rem; border-radius:12px;">
+      <p>&copy; 2025 Data Mining Hub</p>
+      <p>Team: Qiu Chongjia, Li Haonan, Xia Haohan</p>
+    </footer>
+
+    <script>
+        function setupToggle(buttonId, contentId) {
+            const btn = document.getElementById(buttonId);
+            const content = document.getElementById(contentId);
+            
+            btn.addEventListener('click', () => {
+                const isVisible = content.style.display === 'block';
+                content.style.display = isVisible ? 'none' : 'block';
+                btn.textContent = isVisible ? 'Expand Content' : 'Collapse Content';
+            });
+        }
+
+        setupToggle('toggleBtn1', 'content1');
+        setupToggle('toggleBtn2', 'content2');
+    </script>
+</body>
+</html>

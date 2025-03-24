@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Intelligence Application Case Library</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --light-bg: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #ecf0f1;
+        }
+
+        * {
+            margin: 0.25rem;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            line-height: 1.7;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), #34495e);
+            color: var(--text-light);
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 20px 20px;
+        }
+
+        .main-content {
+            max-width: 1280px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .article {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .sidebar {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .content {
+            display: none;
+            margin-top: 1.2rem;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            animation: fadeIn 0.3s ease;
+        }
+
+        button {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background: #2980b9;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        pre {
+            background: #2c3e50;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        li {
+            margin: 0.8rem 0;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+            img {
+                height: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Data Intelligence Application Case Library</h1>
+        <p>Exploring Industry Practices in AI and Data Mining</p>
+    </header>
+
+    <div class="main-content">
+        <main class="article">
+            <section id="4">
+                <h2>Practical Work Assignment 4</h2>
+                <div class="card">
+                    <h3>Problem Overview:</h3>
+                    <p>Given a set of spam and non-spam email examples, the task is to classify a test message using the Naive Bayes classification method.</p>
+                    
+                    <h3>Task Requirements:</h3>
+                    <p>Classify two spam messages and three non-spam messages. Use the Naive Bayes method to analyze the test message and determine its category.</p>
+                    
+                    <h3>Methods Used:</h3>
+                    <ul>
+                        <li><strong>Naive Bayes Method</strong>: Probability classification based on Bayes' theorem</li>
+                        <li><strong>Conditional Probability Calculation</strong>: Analyze the probability of feature words</li>
+                        <li><strong>Bayes' Theorem Application</strong>: Calculate posterior probability</li>
+                    </ul>
+
+                    <button id="toggleBtn1">Expand Content</button>
+                    <div id="content1" class="content">
+                        <div class="image-grid">
+                            <img src="img/4.1.png" alt="Bayes Classification Process">
+                            <img src="img/4.2.png" alt="Probability Calculation Process">
+                            <img src="img/4.3.png" alt="Classification Result Verification">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Problem Overview:</h3>
+                    <p>Given a dataset containing 10 objects and 3 attributes, use the Naive Bayes method to classify a new object.</p>
+                    
+                    <h3>Task Requirements:</h3>
+                    <p>1. Create a dataset and label categories<br>2. Classify the 11th new object</p>
+                    
+                    <h3>Methods Used:</h3>
+                    <ul>
+                        <li><strong>Feature Probability Analysis</strong>: Calculate conditional probabilities for each attribute</li>
+                        <li><strong>Prior Probability Calculation</strong>: Analyze class distribution</li>
+                        <li><strong>Bayesian Inference</strong>: Combine probabilities for classification</li>
+                    </ul>
+                    <button id="toggleBtn2">Expand Content</button>
+                    <div id="content2" class="content">
+                        <img src="img/4.4.png" alt="Dataset Example">
+                        <div class="calculation">
+                            <pre><code>
+P(Y) = 4/10 | P(N) = 6/10
+
+Time Suitability Probability:
+P<sub>Y</sub>(Suitable) = 2/4
+P<sub>Y</sub>(Neutral) = 2/4
+P<sub>Y</sub>(Unsuitable) = 0/4
+
+P<sub>N</sub>(Suitable) = 1/6
+P<sub>N</sub>(Neutral) = 2/6
+P<sub>N</sub>(Unsuitable) = 3/6
+                            </code></pre>
+                        </div>
+                        <img src="img/4.5.png" alt="Coach Rating Analysis">
+                        <div class="calculation">
+                            <pre><code>
+Coach Rating Probability:
+P<sub>Y</sub>(High) = 2/4
+P<sub>Y</sub>(Medium) = 1/4
+P<sub>Y</sub>(Low) = 1/4
+
+P<sub>N</sub>(High) = 2/6
+P<sub>N</sub>(Medium) = 2/6
+P<sub>N</sub>(Low) = 2/6
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <div class="card">
+                <h3>Core Technologies</h3>
+                <ul>
+                    <li>Probability and Statistics</li>
+                    <li>Classification Algorithms</li>
+                    <li>Feature Engineering</li>
+                    <li>Data Modeling</li>
+                    <li>Pattern Recognition</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="header" style="margin-top:3rem; border-radius:12px;">
+        <p>&copy; 2025 Data Mining Hub</p>
+        <p>Team: Qiu Chongjia, Li Haonan, Xia Haohan</p>
+    </footer>
+
+    <script>
+        function setupToggle(buttonId, contentId) {
+            const btn = document.getElementById(buttonId);
+            const content = document.getElementById(contentId);
+            
+            btn.addEventListener('click', () => {
+                const isVisible = content.style.display === 'block';
+                content.style.display = isVisible ? 'none' : 'block';
+                btn.textContent = isVisible ? 'Expand Content' : 'Collapse Content';
+            });
+        }
+
+        setupToggle('toggleBtn1', 'content1');
+        setupToggle('toggleBtn2', 'content2');
+    </script>
+</body>
+</html>

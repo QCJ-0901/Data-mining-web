@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Mining Exploration - Home</title>
+<style>
+:root {
+--primary-color: #2c3e50;
+--secondary-color: #3498db;
+--accent-color: #e74c3c;
+--text-light: #ecf0f1;
+}
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    }
+
+    body {
+        line-height: 1.8;
+        background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+    }
+
+    .header {
+        background: linear-gradient(135deg, var(--primary-color), #34495e);
+        color: var(--text-light);
+        padding: 4rem 2rem;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .header::after {
+        content: '';
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: var(--text-light);
+        transform: skewY(-3deg);
+    }
+
+    .navbar {
+        background: rgba(255,255,255,0.95);
+        padding: 1rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar a {
+        color: var(--primary-color);
+        text-decoration: none;
+        margin: 0 2rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+    }
+
+    .navbar a:hover {
+        background: var(--secondary-color);
+        color: white;
+    }
+
+    .main-content {
+        max-width: 1400px;
+        margin: 3rem auto;
+        padding: 0 2rem;
+        display: flex;
+        gap: 3rem;
+    }
+
+    .article {
+        flex: 3;
+        background: white;
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+
+    .sidebar {
+        flex: 1;
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+
+    .card {
+        background: white;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 10px;
+        border-left: 4px solid var(--secondary-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .card:hover {
+      /*  transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.12); */
+    }
+
+    .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    }
+
+    img {
+        width: 100%;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+        transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      /*  transform: scale(1.02); */
+    }
+
+    h1 {
+        font-size: 3rem;
+        letter-spacing: -1px;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        color: var(--primary-color);
+        margin-bottom: 2rem;
+        font-size: 2.2rem;
+    }
+
+    h3 {
+        color: var(--secondary-color);
+        margin-bottom: 1.2rem;
+        font-size: 1.4rem;
+    }
+
+    ul, ol {
+        padding-left: 1.5rem;
+    }
+
+    li {
+        margin-bottom: 0.8rem;
+        padding-left: 0.5rem;
+    }
+
+    .footer {
+        background: var(--primary-color);
+        color: var(--text-light);
+        text-align: center;
+        padding: 2.5rem;
+        margin-top: 4rem;
+        border-top: 4px solid var(--accent-color);
+    }
+
+    @media (max-width: 768px) {
+        .main-content {
+            flex-direction: column;
+            padding: 0 1rem;
+        }
+        
+        .header {
+            padding: 3rem 1rem;
+        }
+        
+        .card {
+            padding: 1.5rem;
+        }
+    }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+<h1>Data Mining Exploration</h1>
+<p>Discovering Knowledge from Massive Data</p>
+</header>
+
+<div class="main-content">
+    <main class="article">
+        <h2>Core Concepts of Data Mining</h2>
+        <img src="img/bb964d4c6d94d6a261d3c2c8c91edc9.png" alt="Data Mining Process">
+        
+        <div class="card">
+            <h3>📊 What is Data Mining?</h3>
+            <p>Data Mining is the process of extracting hidden, previously unknown, but potentially useful information from large datasets. Its goal is to build decision models that predict future behavior based on historical data. For example, analyzing customer purchase patterns to predict potential customer groups. In today's data-driven business environment, data mining has become a key technology for gaining competitive advantage.</p>
+        </div>
+
+        <div class="card">
+            <h3>🚀 Origins and Development</h3>
+            <p>Data Mining integrates multidisciplinary technologies:</p>
+            <ul>
+                <li>📈 Statistics: Sampling and hypothesis testing methods</li>
+                <li>🤖 Artificial Intelligence: Machine learning algorithms</li>
+                <li>🗄️ Database Systems: Efficient data management</li>
+                <li>🎨 Visualization Techniques: Result presentation methods</li>
+            </ul>
+            <p style="margin-top:1rem;">With the advent of the big data era, distributed computing and parallel processing technologies have significantly enhanced the ability to process massive datasets.</p>
+        </div>
+
+        <div class="card">
+            <h3>🔍 KDD Process</h3>
+            <p>The seven key steps of Knowledge Discovery in Databases (KDD):</p>
+            <ol>
+                <li><strong>Data Cleaning:</strong> Handling missing values and noisy data</li>
+                <li><strong>Data Integration:</strong> Combining data from multiple sources</li>
+                <li><strong>Data Selection:</strong> Extracting relevant data subsets</li>
+                <li><strong>Data Transformation:</strong> Normalizing data formats</li>
+                <li><strong>Data Mining:</strong> Applying algorithms to extract patterns</li>
+                <li><strong>Pattern Evaluation:</strong> Assessing the validity of results</li>
+                <li><strong>Knowledge Representation:</strong> Visualizing the findings</li>
+            </ol>
+        </div>
+    </main>
+
+    <aside class="sidebar">
+        <div class="card">
+            <h3>💼 Typical Application Scenarios</h3>
+            <ul>
+                <li>🛒 Market Basket Analysis</li>
+                <li>👥 Customer Segmentation</li>
+                <li>🕵️ Fraud Detection</li>
+                <li>🔧 Predictive Maintenance</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>⚙️ Common Algorithms</h3>
+            <ul>
+                <li>🌳 Decision Tree Algorithms</li>
+                <li>🧠 Neural Networks</li>
+                <li>🔗 Association Rule Mining</li>
+                <li>🎯 Clustering Analysis</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>⚠️ Technical Challenges</h3>
+            <ul>
+                <li>📑 Unstructured Data Processing</li>
+                <li>⏱️ Real-Time Stream Data Analysis</li>
+                <li>🔒 Privacy Protection Mechanisms</li>
+                <li>💡 Interpretability Improvement</li>
+            </ul>
+        </div>
+    </aside>
+</div>
+
+<footer class="footer">
+    <p>© 2025 Data Mining Hub</p>
+    <p>Team: Qiu Chongjia, Li Haonan, Xia Haohan</p>
+</footer>
+</body>
+</html>

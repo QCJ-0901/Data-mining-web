@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Intelligence Application Case Library</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --light-bg: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #ecf0f1;
+        }
+
+        * {
+            margin: 0.25rem;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            line-height: 1.7;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), #34495e);
+            color: var(--text-light);
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-content {
+            max-width: 1280px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .article {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .sidebar {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .content {
+            display: none;
+            margin-top: 1.2rem;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            animation: fadeIn 0.3s ease;
+        }
+
+        button {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background: #2980b9;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+        }
+
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Data Intelligence Application Case Library</h1>
+        <p>Exploring Industry Practices in AI and Data Mining</p>
+    </header>
+
+    <div class="main-content">
+        <main class="article">
+            <section id="1">
+                <h2>Practical Work Assignment 1</h2>
+                <div class="card">
+                    <h3>Problem Overview:</h3>
+                    <p>Design a data table containing the following types of attributes: numeric, ordinal, nominal, and binary. Then, calculate the mean, median, and standard deviation for numeric features, and the mode for binary features.</p>
+                    <p><strong>Task Requirements:</strong></p>
+                    <p>1. Design the data table</p>
+                    <p>2. Calculate statistical measures for numeric features</p>
+                    <p>3. Calculate the mode for binary features</p>
+                    <button id="toggleBtn1">Expand Content</button>
+                    <div id="content1" class="content">
+                        <p style="text-align: center;">
+                            <img src="img/text1.png" style="width:25rem;height:12.5rem;">
+                        </p>
+                        <p><strong>Average of Height=</strong>(5+7+5+6+8)/5 = 31/5 = 6.2</p>
+                        <p><strong>Median of Area:</strong> Arrange heights in ascending order: 5 m, 5 m, 6 m, 7 m, 8 m
+                            Identify the middle value: 6 m</p>
+                        <p><strong>Standard Deviation of Area：</strong>√(((5-6.2)^2+(7-6.2)^2+(5-6.2)^2+(6-6.2)^2+(8-6.2)^2)/5)</p>
+                        <p>(5-6.2)^2=1.44</p>
+                        <p>(7-6.2)^2=0.64</p>
+                        <p>(5-6.2)^2=1.44</p>
+                        <p>(6-6.2)^2=0.04</p>
+                        <p>(8-6.2)^2=3.24</p>
+                        <p>√(((5-6.2)^2+(7-6.2)^2+(5-6.2)^2+(6-6.2)^2+(8-6.2)^2)/5) = √1.36≈1.17</p>
+                        <p>“no”，“yes”，“yes”，“no”，“yes”</p>
+                        <p>"yes" appears 3 times</p>
+                        <p>"no" appears 2 times</p>
+                        <p>Mode of Elevator Availability: yes</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Problem Overview:</h3>
+                    <p>Binary encoding is the process of converting information such as images or text into a form of 0s and 1s. In image processing, this typically means converting each pixel of an image into its corresponding binary value. Specifically, each pixel of the image is converted into a number (such as a grayscale or RGB value), and then these numbers are converted into binary representations, ultimately forming a binary vector.</p>
+                    <button id="toggleBtn2">Expand Content</button>
+                    <div id="content2" class="content">
+                        <p style="text-align: center;">
+                            <img src="img/text1.3.png" style="height: 150px;width: 150px;">
+                        </p>
+                        <h3><strong> Encoding：0010010010000000</strong></h3>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Problem Overview:</h3>
+                    <p>Determine which category an unlabeled object belongs to. Use the KNN method for classification.</p>
+                    <p><strong>Task Requirements:</strong></p>
+                    <p>1. Use the K-Nearest Neighbors (KNN) algorithm to determine the category of the unlabeled object.</p>
+                    <p>2. Use three different distance metrics for KNN calculations:</p>
+                    <p><strong> Manhattan Distance</strong></p>
+                    <p><strong> Euclidean Distance</strong></p>
+                    <p><strong> Chebyshev Distance</strong></p>
+                    <p>3. Calculate the distance between the object and labeled data points, and use majority voting among the K nearest neighbors to determine the category of the unlabeled object.</p>
+                    <button id="toggleBtn3">Expand Content</button>
+                    <div id="content3" class="content">
+                        <p style="text-align: center;">
+                            <img src="img/text1.4.png" style="height: 350px;width: 450px;">
+                        </p>
+                        <h3>Manhattan Distance Calculation:</h3>
+                        <p>Ardor1 (40, 220):</p>
+                        <p>DManhattan=∣85−40∣+∣240−220∣=45+20=65</p>
+                        <p>Logitech1 (70, 200):</p>
+                        <p>DManhattan=∣85−70∣+∣240−200∣=15+40=55</p>
+                        <p>Razer1 (90, 240):</p>
+                        <p>DManhattan=∣85−90∣+∣240−240∣=5+0=5</p>
+                        <p>HyperX1 (80, 205):</p>
+                        <p>DManhattan=∣85−80∣+∣240−205∣=5+35=40</p>
+                        <p>Logitech2 (80, 270):</p>
+                        <p>DManhattan=∣85−80∣+∣240−270∣=5+30=35</p>
+                        <p>HyperX2 (55, 230):</p>
+                        <p>DManhattan=∣85−55∣+∣240−230∣=30+10=40</p>
+
+                        <h3>Euclidean Distance Calculation:</h3>
+                        <p style="text-align: center;">
+                            <img src="img/text1.5.png" style="height: 350px;width: 450px;">
+                        </p>
+
+                        <h3>Chebyshev Distance Calculation: </h3>
+                        <p>Ardor1 (40, 220):</p>
+                        <p>DChebyshev=max(∣85−40∣,∣240−220∣)=max(45,20)=45</p>
+                        <p>Logitech1 (70, 200):</p>
+                        <p>DChebyshev=max(∣85−70∣,∣240−200∣)=max(15,40)=40</p>
+                        <p>Razer1 (90, 240):</p>
+                        <p>DChebyshev=max(∣85−90∣,∣240−240∣)=max(5,0)=5</p>
+                        <p>HyperX1 (80, 205):</p>
+                        <p>DChebyshev=max(∣85−80∣,∣240−205∣)=max(5,35)=35</p>
+                        <p>Logitech2 (80, 270):</p>
+                        <p>DChebyshev=max(∣85−80∣,∣240−270∣)=max(5,30)=30</p>
+                        <p>HyperX2 (55, 230):</p>
+                        <p>DChebyshev=max(∣85−55∣,∣240−230∣)=max(30,10)=30</p>
+                        
+                        <p style="text-align: center;">
+                            <img src="img/text1.6.png" style="height: 350px;width: 450px;">
+                        </p>
+
+                        <h3>According to the results of the three distance measures, the most common category among the nearest neighbors is Logitech (in Manhattan, Euclidean, and Chebyshev distances). Microphone Name is Razer</h3>
+                        
+                        <pre><code>
+microphone_data = [
+    {"Name": "Ardor1", "Volume": 40, "Noise Reduction": 220, "Class": "Ardor"},
+    {"Name": "Logitech1", "Volume": 70, "Noise Reduction": 200, "Class": "Logitech"},
+    {"Name": "Razer1", "Volume": 90, "Noise Reduction": 240, "Class": "Razer"},
+    {"Name": "HyperX1", "Volume": 80, "Noise Reduction": 205, "Class": "HyperX"},
+    {"Name": "Logitech2", "Volume": 80, "Noise Reduction": 270, "Class": "Logitech"},
+    {"Name": "HyperX2", "Volume": 55, "Noise Reduction": 230, "Class": "HyperX"} 
+]
+
+unknown_object = {"Volume": 85, "Noise Reduction": 240}
+
+def manhattan_distance(a, b):
+    return abs(a["Volume"] - b["Volume"]) + abs(a["Noise Reduction"] - b["Noise Reduction"])
+
+def euclidean_distance(a, b):
+    return ((a["Volume"] - b["Volume"]) ** 2 + (a["Noise Reduction"] - b["Noise Reduction"]) ** 2) ** 0.5
+
+def chebyshev_distance(a, b):
+    return max(abs(a["Volume"] - b["Volume"]), abs(a["Noise Reduction"] - b["Noise Reduction"]))
+
+# Distance calculation and output
+for data in microphone_data:
+    manhattan = manhattan_distance(unknown_object, data)
+    euclidean = euclidean_distance(unknown_object, data)
+    chebyshev = chebyshev_distance(unknown_object, data)
+    
+    print(f"Calculating distances to {data['Name']} ({data['Class']}):")
+    print(f"Manhattan distance: {manhattan}")
+    print(f"Euclidean distance: {euclidean}")
+    print(f"Chebyshev distance: {chebyshev}")
+    print("")
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <div class="card">
+                <h3>Core Technologies</h3>
+                <ul>
+                    <li>Association Rule Mining</li>
+                    <li>Deep Learning Models</li>
+                    <li>Machine Learning Algorithms</li>
+                    <li>Data Visualization</li>
+                    <li>Pattern Recognition</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="header" style="margin-top: 3rem; border-radius: 12px;">
+        <p>&copy; 2025 Data Mining Hub</p>
+        <p>Team: Qiu Chongjia, Li Haonan, Xia Haohan</p>
+    </footer>
+
+    <script>
+        // Generic toggle function
+        function setupToggle(buttonId, contentId) {
+            const button = document.getElementById(buttonId);
+            const content = document.getElementById(contentId);
+
+            button.addEventListener('click', () => {
+                const isVisible = content.style.display === 'block';
+                content.style.display = isVisible ? 'none' : 'block';
+                button.textContent = isVisible ? 'Expand Content' : 'Collapse Content';
+                button.classList.toggle('active', !isVisible);
+            });
+        }
+
+        // Initialize all toggle buttons
+        setupToggle('toggleBtn1', 'content1');
+        setupToggle('toggleBtn2', 'content2');
+        setupToggle('toggleBtn3', 'content3');
+    </script>
+</body>
+</html>
