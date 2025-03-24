@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Profile Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: #0a0a0a;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px;
+            min-height: 100vh;
+        }
+
+        .profile-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+            aspect-ratio: 3/4;
+        }
+
+        .profile-card:hover {
+            transform: scale(1.03);
+            z-index: 2;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.9);
+            transition: filter 0.3s;
+        }
+
+        .profile-card:hover .profile-image {
+            filter: brightness(1);
+        }
+
+        .profile-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%);
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.4s;
+        }
+
+        .profile-card:hover .profile-content {
+            transform: translateY(0);
+        }
+
+        .name {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .position {
+            font-size: 1.1rem;
+            color: #e74c3c;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .stat-number {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 1200px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+            
+            .name {
+                font-size: 1.8rem;
+            }
+            
+            .profile-content {
+                padding: 20px;
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .profile-card {
+            animation: slideUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .profile-card:nth-child(1) { animation-delay: 0.2s; }
+        .profile-card:nth-child(2) { animation-delay: 0.4s; }
+        .profile-card:nth-child(3) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <!-- Profile 1 -->
+        <div class="profile-card">
+            <img src="img/夏.png" alt="Profile 1" class="profile-image">
+            <div class="profile-content">
+                <h2 class="name">Xia Haohan</h2>
+                <p class="position">Front-End Designer</p>
+                <p class="description">As a front-end designer, my primary role is to combine web design and development, ensuring both aesthetic appeal and user interaction experience. I am proficient in design tools such as Photoshop and Sketch, and I can also write front-end code to implement design concepts. I believe the integration of design and development can bring more intuitive and excellent user experiences to websites.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">15+ Years</div>
+                        <div class="stat-label">Learning Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile 2 -->
+        <div class="profile-card">
+            <img src="img/邱崇嘉.jpg" alt="Profile 2" class="profile-image">
+            <div class="profile-content">
+                <h2 class="name">Qiu Chongjia</h2>
+                <p class="position">Front-End Developer</p>
+                <p class="description">I specialize in front-end development, with expertise in HTML, CSS, and JavaScript. I can implement page layouts and interactive effects based on design mockups. During my studies, I participated in multiple front-end projects, gaining practical development experience. In the future, I hope to apply my knowledge to real-world projects and provide better user experiences for websites and applications.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">8K+ Hours</div>
+                        <div class="stat-label">Deep Learning</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Awards</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile 3 -->
+        <div class="profile-card">
+            <img src="img/李浩楠.jpg" alt="Profile 3" class="profile-image">
+            <div class="profile-content">
+                <h2 class="name">Li Haonan</h2>
+                <p class="position">UI Developer</p>
+                <p class="description">I focus on user interface development, striving to make web interfaces both beautiful and functional. During my studies, I delved into front-end frameworks like Vue and React, while emphasizing front-end performance optimization. My goal is to enhance user experience while ensuring fast page loading and responsiveness. I look forward to improving my skills and creating outstanding UI designs and developments in my future work.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">300+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Award</div>
+                        <div class="stat-label">Shandong Jiaotong University Designer of the Year</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

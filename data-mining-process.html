@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mining Process Analysis - Key Steps Explained</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #27ae60;
+            --accent-color: #e67e22;
+            --text-light: #ecf0f1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            line-height: 1.8;
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), #34495e);
+            color: var(--text-light);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-flow {
+            display: flex;
+            justify-content: center;
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .process-step {
+            width: 200px;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            margin: 0 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .process-step:hover {
+            transform: translateY(-10px);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .content-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+		p{
+			color: #2c3e50;
+		}
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin: 2rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin: 1.5rem 0;
+        }
+
+        ul {
+            padding-left: 2rem;
+            margin: 1rem 0;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        li::before {
+            content: "▹";
+            color: var(--accent-color);
+            position: absolute;
+            left: -1.2rem;
+        }
+
+        .highlight {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-left: 4px solid var(--accent-color);
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .process-flow {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .process-step {
+                width: 80%;
+                margin: 1rem 0;
+            }
+            
+            .header {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1>Data Mining Process Analysis</h1>
+		<h3 style="color: white;">The Path from Raw Data to Business Value</h3>
+        <div class="process-flow">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3>Data Preparation</h3>
+                <p>Data Selection and Preprocessing</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3>Mathematical Modeling</h3>
+                <p>Algorithm Selection and Parameter Tuning</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>Model Application</h3>
+                <p>Evaluation and Deployment</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3>Knowledge Representation</h3>
+                <p>Visualization and Output</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Data Preparation -->
+        <section class="content-section">
+            <h2>🔍 Data Preparation (70% Time Consumption)</h2>
+            <div class="highlight">
+                <h3>Key Steps:</h3>
+                <ul>
+                    <li><strong>Data Selection:</strong> Filter relevant data from internal databases, external APIs, log files, and other sources.</li>
+                    <li><strong>Data Cleaning:</strong> Handle missing values (mean imputation/record deletion), outliers (3σ principle), and data consistency checks.</li>
+                    <li><strong>Data Integration:</strong> Standardize time formats, currency units, and encoding conventions.</li>
+                    <li><strong>Data Transformation:</strong> Normalization, standardization, and discretization.</li>
+                </ul>
+            </div>
+            <p>Example: Preprocessing e-commerce user behavior data requires integrating clickstream logs, order data, and user profiles, with special attention to timestamp alignment and user ID matching.</p>
+        </section>
+
+        <!-- Mathematical Modeling -->
+        <section class="content-section">
+            <h2>📐 Mathematical Modeling and Algorithm Selection</h2>
+            <h3>Key Considerations:</h3>
+            <ul>
+                <li>Data type characteristics (structured/unstructured)</li>
+                <li>Problem type (classification/regression/clustering)</li>
+                <li>Algorithm complexity and computational resources</li>
+                <li>Model interpretability requirements</li>
+            </ul>
+            
+            <div class="highlight">
+                <h3>Common Tools Comparison:</h3>
+                <ul>
+                    <li>Python Scikit-learn: Suitable for rapid prototyping</li>
+                    <li>Spark MLlib: Handles large-scale datasets</li>
+                    <li>TensorFlow: Deep learning models</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Model Application -->
+        <section class="content-section">
+            <h2>🚀 Model Evaluation and Deployment</h2>
+            <h3>Evaluation Metrics:</h3>
+            <ul>
+                <li>Classification: Accuracy, Recall, F1 Score, AUC-ROC Curve</li>
+                <li>Regression: MAE, RMSE, R² Score</li>
+                <li>Clustering: Silhouette Score, Calinski-Harabasz Index</li>
+            </ul>
+
+            <div class="highlight">
+                <h3>Deployment Strategies:</h3>
+                <ul>
+                    <li>Real-time Prediction: REST API services</li>
+                    <li>Batch Processing: Scheduled tasks</li>
+                    <li>Edge Computing: Lightweight model deployment</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Knowledge Representation -->
+        <section class="content-section">
+            <h2>📊 Knowledge Visualization</h2>
+            <h3>Common Presentation Formats:</h3>
+            <ul>
+                <li>Interactive Dashboards (Tableau/Power BI)</li>
+                <li>Automated Analysis Reports</li>
+                <li>3D Data Graphs</li>
+                <li>Decision Tree Visualization</li>
+            </ul>
+
+            <div class="highlight">
+                <h3>Best Practices:</h3>
+                <ul>
+                    <li>For Management: Highlight KPI trends</li>
+                    <li>For Engineers: Showcase feature importance</li>
+                    <li>For Clients: Use storytelling with data</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="content-section">
+            <h2>🔁 Iterative Optimization Process</h2>
+            <p>Data mining is an iterative process requiring continuous:</p>
+            <ul>
+                <li>Model performance monitoring (accuracy decay alerts)</li>
+                <li>Feature engineering optimization (automatic feature generation)</li>
+                <li>Online learning updates (streaming data processing)</li>
+            </ul>
+            <p style="margin-top:1.5rem;color:var(--accent-color);font-weight:500;">
+                ★ Pro Tip: Successful data mining projects require close collaboration between business experts and data scientists, with 60% of time spent on data preparation, 20% on modeling, and 20% on result interpretation.
+            </p>
+        </section>
+    </main>
+</body>
+</html>

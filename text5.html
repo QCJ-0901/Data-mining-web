@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Intelligence Application Case Library</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --light-bg: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #ecf0f1;
+        }
+
+        * {
+            margin: 0.25rem;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            line-height: 1.7;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), #34495e);
+            color: var(--text-light);
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 20px 20px;
+        }
+
+        .main-content {
+            max-width: 1280px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .article {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .sidebar {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .content {
+            display: none;
+            margin-top: 1.2rem;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            animation: fadeIn 0.3s ease;
+        }
+
+        button {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background: #2980b9;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        pre {
+            background: #2c3e50;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        li {
+            margin: 0.8rem 0;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+            img {
+                height: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Data Intelligence Application Case Library</h1>
+        <p>Exploring Industry Practices in AI and Data Mining</p>
+    </header>
+
+    <div class="main-content">
+        <main class="article">
+            <section id="5">
+                <h2>Practical Work Assignment 5</h2>
+                <div class="card">
+                    <h3>Overview:</h3>
+                    <p>Given a data table containing objects and attributes, select the optimal splitting feature by calculating the Gini impurity.</p>
+                    
+                    <h3>Task Requirements:</h3>
+                    <p>Calculate the Gini impurity for P1-P3 and select the optimal splitting feature.</p>
+                    
+                    <h3>Core Method:</h3>
+                    <pre><code>Gini(D) = 1 - ∑(p_i²)</code></pre>
+                    <ul>
+                        <li>Calculate the probability distribution of feature values</li>
+                        <li>Calculate the conditional probability distribution</li>
+                        <li>Weighted calculation of Gini impurity</li>
+                    </ul>
+
+                    <button id="toggleBtn1">Expand Content</button>
+                    <div id="content1" class="content">
+                        <div class="calculation-grid">
+                            <img src="img/5.1.png" alt="Gini Impurity Calculation">
+                            <div class="formula-group">
+                                <pre><code>
+// P1 Calculation
+P(Y=0|P1=0) = 0 → Gini(0)
+P(Y=1|P1=0) = 1 → Gini(0)
+Weighted Gini = (1/4)*0 + (3/4)*(1 - (1/3)² - (2/3)²) = 1/6
+
+// P2 Calculation
+P(Y=0|P2=0) = 0.5 → Gini(0.5)
+Weighted Gini = (1/2)*0.5 + (1/2)*0 = 1/8
+
+// P3 Calculation
+Result same as P1 → Gini=1/6
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Overview:</h3>
+                    <p>Based on the feature data of 15 animals, build a decision tree model to determine whether a new sample is a squirrel.</p>
+                    
+                    <h3>Task Requirements:</h3>
+                    <p>Calculate the Gini impurity for features A-D and build a decision tree model.</p>
+                    
+                    <h3>Implementation Steps:</h3>
+                    <ul>
+                        <li>Calculate the Gini impurity for each feature</li>
+                        <li>Select the optimal splitting feature</li>
+                        <li>Recursively build the decision tree</li>
+                    </ul>
+
+                    <button id="toggleBtn2">Expand Content</button>
+                    <div id="content2" class="content">
+                        <div class="decision-tree">
+                            <img src="img/5.2.png" alt="Initial Data Distribution">
+                            <img src="img/5.3.png" alt="First Split">
+                            
+                            <div class="calculation-steps">
+                                <pre><code>
+/* First Split Calculation */
+Gini(A) = 8/15*(1 - (3/4)² - (1/4)²) = 0.1
+Gini(B) = 11/15*(1 - (6/11)² - (5/11)²) ≈ 0.1818
+Gini(C) = 0.1, Gini(D) = 0.1
+                                </code></pre>
+                            </div>
+
+                            <img src="img/5.4.png" alt="Second Split">
+                            <img src="img/5.5.png" alt="Final Decision Tree">
+                            <img src="img/5.6.png" alt="Classification Result">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <div class="card">
+                <h3>Core Technologies</h3>
+                <ul>
+                    <li>Decision Tree Algorithm</li>
+                    <li>Feature Selection</li>
+                    <li>Gini Impurity</li>
+                    <li>Recursive Splitting</li>
+                    <li>Pattern Recognition</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="header" style="margin-top:3rem; border-radius:12px;">
+     <p>&copy; 2025 Data Mining Popularization Station</p>
+      <p>Production Team: Qiu Chongjia, Li Haonan, Xia Haohan</p>
+    </footer>
+
+    <script>
+        function setupToggle(buttonId, contentId) {
+            const btn = document.getElementById(buttonId);
+            const content = document.getElementById(contentId);
+            
+            btn.addEventListener('click', () => {
+                const isVisible = content.style.display === 'block';
+                content.style.display = isVisible ? 'none' : 'block';
+                btn.textContent = isVisible ? 'Expand Content' : 'Collapse Content';
+            });
+        }
+
+        setupToggle('toggleBtn1', 'content1');
+        setupToggle('toggleBtn2', 'content2');
+    </script>
+</body>
+</html>

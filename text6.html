@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Intelligence Application Case Library</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --light-bg: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #ecf0f1;
+        }
+
+        * {
+            margin: 0.25rem;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            line-height: 1.7;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), #34495e);
+            color: var(--text-light);
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 20px 20px;
+        }
+
+        .main-content {
+            max-width: 1280px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .article {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .sidebar {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .content {
+            display: none;
+            margin-top: 1.2rem;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            animation: fadeIn 0.3s ease;
+        }
+
+        button {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background: #2980b9;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+            img {
+                height: auto !important;
+            }
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Data Intelligence Application Case Library</h1>
+        <p>Exploring Industry Practices in AI and Data Mining</p>
+    </header>
+
+    <div class="main-content">
+        <main class="article">
+            <section id="6">
+                <h2>Practical Work Assignment 6</h2>
+                <div class="card">
+                    <h3>Overview:</h3>
+                    <p>Graph clustering analysis based on a distance matrix using the radius threshold method for clustering.</p>
+                    
+                    <h3>Task Requirements:</h3>
+                    <p>Determine the clustering relationships of objects based on the distance matrix and radius parameter R=2.</p>
+                    
+                    <h3>Implementation Steps:</h3>
+                    <ul>
+                        <li>Construct a distance relationship graph</li>
+                        <li>Apply threshold filtering to edges</li>
+                        <li>Discover connected components</li>
+                    </ul>
+
+                    <button id="toggleBtn1">Expand Content</button>
+                    <div id="content1" class="content">
+                        <img src="img/6.1.png" alt="Distance Matrix">
+                        <div class="cluster-result">
+                            <h4>Clustering Process:</h4>
+                            <pre><code>
+d(A,D)=1 ≤2 ➔ Same cluster
+d(B,D)=2 ≤2 ➔ Same cluster
+d(B,C)=1 ≤2 ➔ Same cluster
+d(C,E)=1 ≤2 ➔ Same cluster
+Final Clustering: {A,B,C,D,E}
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Overview:</h3>
+                    <p>Two-dimensional data clustering analysis based on the k-Means algorithm, including the complete iteration process.</p>
+                    
+                    <h3>Task Requirements:</h3>
+                    <p>Implement the clustering process for k=2, including centroid updates and iterative optimization.</p>
+                    
+                    <h3>Algorithm Flow:</h3>
+                    <ol>
+                        <li>Randomly initialize centroids</li>
+                        <li>Assign samples to the nearest centroid</li>
+                        <li>Recalculate centroid positions</li>
+                        <li>Iterate until convergence</li>
+                    </ol>
+
+                    <button id="toggleBtn2">Expand Content</button>
+                    <div id="content2" class="content">
+                        <div class="table-container">
+                            <table>
+                                <caption>Initial Data Distribution</caption>
+                                <thead>
+                                    <tr>
+                                        <th>Object</th><th>P₁</th><th>P₂</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>A</td><td>4</td><td>2</td></tr>
+                                    <tr><td>B</td><td>3</td><td>2</td></tr>
+                                    <tr><td>C</td><td>1</td><td>1</td></tr>
+                                    <tr><td>D</td><td>1</td><td>2</td></tr>
+                                    <tr><td>E</td><td>1</td><td>5</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="iteration-process">
+                            <h4>First Iteration:</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Object</th><th>To Centroid 1</th><th>To Centroid 2</th><th>Assignment Result</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>A</td><td>0</td><td>3.16</td><td>Cluster 1</td></tr>
+                                    <tr><td>B</td><td>1</td><td>2.24</td><td>Cluster 1</td></tr>
+                                    <tr><td>C</td><td>3.16</td><td>0</td><td>Cluster 2</td></tr>
+                                    <tr><td>D</td><td>3</td><td>1</td><td>Cluster 2</td></tr>
+                                    <tr><td>E</td><td>4.24</td><td>4</td><td>Cluster 2</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="final-result">
+                            <img src="img/6.2.png" alt="Clustering Result Visualization">
+                            <h4>Stable Clustering Result:</h4>
+                            <ul>
+                                <li>Cluster 1: A(4,2), B(3,2)</li>
+                                <li>Cluster 2: C(1,1), D(1,2), E(1,5)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <div class="card">
+                <h3>Core Technologies</h3>
+                <ul>
+                    <li>Graph Theory Analysis</li>
+                    <li>Clustering Algorithms</li>
+                    <li>Iterative Optimization</li>
+                    <li>Distance Metrics</li>
+                    <li>Data Visualization</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="header" style="margin-top:3rem; border-radius:12px;">
+     <p>&copy; 2025 Data Mining Popularization Station</p>
+      <p>Production Team: Qiu Chongjia, Li Haonan, Xia Haohan</p>
+    </footer>
+
+    <script>
+        function setupToggle(buttonId, contentId) {
+            const btn = document.getElementById(buttonId);
+            const content = document.getElementById(contentId);
+            
+            btn.addEventListener('click', () => {
+                const isVisible = content.style.display === 'block';
+                content.style.display = isVisible ? 'none' : 'block';
+                btn.textContent = isVisible ? 'Expand Content' : 'Collapse Content';
+            });
+        }
+
+        setupToggle('toggleBtn1', 'content1');
+        setupToggle('toggleBtn2', 'content2');
+    </script>
+</body>
+</html>

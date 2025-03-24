@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Data Intelligence Application Case Library</title>
+		<style>
+			/* Optimized styles */
+			* {
+				margin: 0.1875rem;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: 'Segoe UI', Arial, sans-serif;
+			}
+
+			p img {
+				display: block;
+				/* Make images block-level elements */
+				margin-left: auto;
+				margin-right: auto;
+				/* Center images */
+			}
+
+			/* Responsive image sizing */
+			img {
+				max-width: 100%;
+				/* Make images responsive */
+				height: auto;
+				/* Maintain aspect ratio */
+			}
+
+			body {
+				line-height: 1.6;
+				background-color: #f5f5f5;
+			}
+
+			picture {}
+
+			.header {
+				background-color: #2c3e50;
+				color: white;
+				padding: 2rem;
+				text-align: center;
+			}
+
+			.navbar {
+				background-color: #34495e;
+				padding: 1rem;
+				display: flex;
+				justify-content: center;
+			}
+
+			.navbar a {
+				color: white;
+				text-decoration: none;
+				margin: 0 1.5rem;
+				font-size: 1.1rem;
+				transition: color 0.3s;
+			}
+
+			.navbar a:hover {
+				color: #3498db;
+			}
+
+			.main-content {
+				max-width: 1200px;
+				margin: 2rem auto;
+				padding: 0 1rem;
+				display: flex;
+				gap: 2rem;
+			}
+
+			.article {
+				flex: 3;
+				background: white;
+				padding: 2rem;
+				border-radius: 8px;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+			}
+
+			.sidebar {
+				flex: 1;
+				background: #ecf0f1;
+				padding: 1.5rem;
+				border-radius: 8px;
+			}
+
+			.footer {
+				background-color: #2c3e50;
+				color: white;
+				text-align: center;
+				padding: 1.5rem;
+				margin-top: 2rem;
+			}
+
+			.content {
+				display: none;
+				/* Initially hidden */
+				margin-top: 10px;
+				padding: 10px;
+				border: 1px solid #ddd;
+				background-color: #f9f9f9;
+			}
+
+			.card {
+				background: white;
+				padding: 1.5rem;
+				margin-bottom: 1.5rem;
+				border-radius: 6px;
+				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+				border-left: 4px solid #3498db;
+			}
+
+			.tech-badge {
+				background-color: #3498db;
+				color: white;
+				padding: 0.3rem 0.8rem;
+				border-radius: 15px;
+				font-size: 0.9rem;
+				display: inline-block;
+				margin: 0.5rem 0;
+			}
+
+			/* Button styling */
+			button {
+				background-color: #3498db;
+				color: white;
+				padding: 0.25rem 1rem;
+				border: none;
+				border-radius: 25px;
+				font-size: 1rem;
+				cursor: pointer;
+				transition: all 0.3s ease;
+			}
+
+			button:hover {
+				background-color: #2980b9;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+			}
+
+			button:focus {
+				outline: none;
+			}
+
+			button:active {
+				transform: scale(0.98);
+			}
+
+			@media (max-width: 768px) {
+				.main-content {
+					flex-direction: column;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header class="header">
+			<h1>Data Intelligence Application Case Library</h1>
+			<p>Exploring Industry Practices in AI and Data Mining</p>
+		</header>
+
+		<div class="main-content">
+			<main class="article">
+				<section id="1">
+					<h2>Practical Work Assignment 2</h2>
+					<div class="card">
+						<h3>Problem Overview:</h3>
+						<p>Based on the available information, use mean, median, mode, and smart formulas to determine the values of missing data.</p>
+
+						<h3>Task Requirements:</h3>
+						<p>Missing Data Imputation: Use different statistical methods to fill in missing data values based on the given partial data.</p>
+
+						<h3>Methods Used:</h3>
+						<ul>
+							<li><strong>Mean (Average)</strong>: Calculate the average of known data and use it to replace missing values.</li>
+							<li><strong>Median</strong>: Calculate the median of known data and use it to replace missing values.</li>
+							<li><strong>Mode</strong>: Calculate the mode of known data and use it to replace missing values.</li>
+							<li><strong>Smart Formula</strong>: Estimate missing values using formulas based on dataset characteristics or specific patterns.</li>
+						</ul>
+						<button id="toggleBtn1">Expand Content</button>
+						<div id="content1" class="content">
+							<p style="text-align: center;">
+								<img src="img/text2.1.png" style="width:25rem;height:12.5rem;">
+							</p>
+							<h3> Using the Average</h3>
+							<p><strong>P1 values:</strong> 22, 53, 60, 91, 60</p>
+							<p><strong>Average:</strong> (22 + 53 + 60 + 91 + 60) / 5 = 286 / 5 = 57.2</p>
+							<p style="text-align: center;">
+								<img src="img/text2.2.png" style="width:25rem;height:12.5rem;">
+								<p><strong>P2 values:</strong>
+								 <p>Values: 32, 50, 45, 30, 60</p>
+								    <p>Average = (32 + 50 + 45 + 30 + 60) / 5 = 217 / 5 = 43.4</p>
+								    
+								    <p><strong>P3 Values:</strong></p>
+								    <p>Values: 41, 76, 28, 41, 33</p>
+								    <p>Average = (41 + 76 + 28 + 41 + 33) / 5 = 219 / 5 = 43.8</p>
+								
+								    <h3>Using the Median</h3>
+								    
+								   <p><strong>P1 values:</strong>
+								    <p>Values: 22, 53, 60, 91, 60</p>
+								    <p>Sorted: 22, 53, 60, 60, 91</p>
+								    <p>Median for P1: 60</p>
+									<p style="text-align: center;">
+							<img src="img/text2.4.png" style="width:25rem;height:12.5rem;">
+							 <p><strong> Using the Mode</strong></p>     
+							     <p>P1 values: 22, 53, 60, 91, 60</p>
+							     <p>The Mode is 60 (appears twice).</p>
+								 <p style="text-align: center;">
+								 <img src="img/text2.5.png" style="width:25rem;height:12.5rem;">
+								 <img src="img/text2.6.png" style="width:25rem;height:12.5rem;">
+								 <p><strong>Using a Smart Formula</strong></p>
+								     
+								     <p>(Sp1)² = (1239.04 + 17.64 + 7.84 + 1142.44 + 7.84) / 4 = 603.7</p>
+								     <p>(Sp2)² = (129.96 + 43.56 + 2.56 + 179.56 + 275.56) / 4 = 157.8</p>
+								     <p>r(p1, p2) = -30.4 / √(4 * 603.7 * 157.8) = -0.0492</p>
+								 
+								     <p>A(p1) = 57.2, A(p3) = 43.8</p>
+								     <p>(Xi - X̄)(Yi - Ȳ) = 1275.04 + 9.24 + 10.64 + 1107.04 + 5.04 = -205.8</p>
+								     <p>(Sp1)² = (1239.04 + 17.64 + 7.84 + 1142.44 + 7.84) / 4 = 603.7</p>
+								     <p>(Sp3)² = (7.84 + 1036.84 + 249.64 + 7.84 + 116.64) / 4 = 354.7</p>
+								     <p>r(p1, p3) = -205.8 / √(4 * 603.7 * 354.7) = -0.111</p>
+								 
+								     <p>P(5) = 57.2 + (1 / (-0.0492 - 0.111)) * (-0.0492 * (50 - 43.4) - 0.111 * (20 - 43.8)) = 81.6</p>
+									 <p style="text-align: center;">
+								 <img src="img/text2.7.png" style="width:25rem;height:12.5rem;">
+								 
+							</p>
+							
+						</div>
+					</div>
+
+					<div class="card">
+						<h3>Problem Overview:</h3>
+						<p>The table contains order information for anonymous users in an online store. Rows represent product names, and columns represent order IDs. Each cell in the table contains a 1 if the product appears in the corresponding order, otherwise 0. When building a recommendation system, Euclidean distance is used to evaluate the similarity between products.</p>
+						
+						<h3>Task Requirements:</h3>
+						<p>Calculate the Euclidean distance between Product A and other products. Based on these distances, evaluate which products can be recommended when purchasing Product A.</p>
+						
+						<h3>Methods Used:</h3>
+						<ul>
+						  <li><strong>Euclidean Distance</strong>: Calculate the difference between two products across all orders using the Euclidean formula to determine similarity.</li>
+						  <li><strong>Similarity Evaluation</strong>: Based on Euclidean distance results, select the most similar products to Product A for recommendation.</li>
+						</ul>
+
+						<button id="toggleBtn2">Expand Content</button>
+						<div id="content2" class="content">
+							<p style="text-align: center;">
+								<img src="img/text2.8.png" style="width:25rem;height:12.5rem;">
+							</p>
+							<p>Distance(A, B) = √((1 - 0)² + (0 - 1)² + (1 - 1)² + (0 - 1)² + (1 - 0)² + (1 - 0)²)</p>
+							    <p>Distance(A, B) = √5 = 2.236</p>
+							
+							    <p>Distance(A, C) = √((1 - 1)² + (0 - 1)² + (1 - 1)² + (0 - 1)² + (1 - 1)² + (1 - 0)²)</p>
+							    <p>Distance(A, C) = √3 = 1.732</p>
+							
+							    <p>Distance(A, D) = √((1 - 1)² + (0 - 0)² + (1 - 0)² + (0 - 1)² + (1 - 1)² + (1 - 1)²)</p>
+							    <p>Distance(A, D) = √2 = 1.414</p>
+							
+							    <p>Distance(A, D) > Distance(A, C) > Distance(A, B)</p>
+							    <p>Product D is the Best for A</p>
+								
+				</section>
+
+
+			</main>
+
+			<aside class="sidebar">
+				<div class="card">
+					<h3>Core Technologies</h3>
+					<ul>
+						<li>Association Rule Mining</li>
+						<li>Deep Learning Models</li>
+						<li>Machine Learning Algorithms</li>
+					</ul>
+				</div>
+			</aside>
+		</div>
+
+		<footer class="footer">
+			<p>&copy; 2025 Data Mining Hub</p>
+			 <p>Team: Qiu Chongjia, Li Haonan, Xia Haohan</p>
+		</footer>
+
+		<script>
+			document.getElementById('toggleBtn1').addEventListener('click', function() {
+				var content = document.getElementById('content1');
+				content.style.display = content.style.display === 'block' ? 'none' : 'block';
+			});
+
+			document.getElementById('toggleBtn2').addEventListener('click', function() {
+				var content = document.getElementById('content2');
+				content.style.display = content.style.display === 'block' ? 'none' : 'block';
+			});
+
+			document.getElementById('toggleBtn3').addEventListener('click', function() {
+				var content = document.getElementById('content3');
+				content.style.display = content.style.display === 'block' ? 'none' : 'block';
+			});
+		</script>
+	</body>
+</html>

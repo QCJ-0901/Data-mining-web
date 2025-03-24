@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mining Exploration | Discovering Treasures in Data</title>
+    <style>
+        :root {
+            --primary-color: #3AA6B9;   /* Fresh Blue */
+            --secondary-color: #FFD700; /* Vibrant Yellow */
+            --accent-color: #90EE90;    /* Natural Green */
+            --text-color: #333;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --shadow-color: rgba(58, 166, 185, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+            line-height: 1.8;
+            background: linear-gradient(145deg, #f0fafb, #e6f7f8);
+            color: var(--text-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #2C7873);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        header p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+        header::after {
+            content: "🔍";
+            position: absolute;
+            font-size: 8rem;
+            opacity: 0.1;
+            right: 10%;
+            bottom: -20%;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.2rem;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            border: 2px solid transparent;
+        }
+
+        nav a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(58, 166, 185, 0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            margin: 2.5rem 0;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+            border-radius: 20px 0 0 20px;
+        }
+
+        .visual-guide {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .infographic {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(58, 166, 185, 0.1);
+        }
+
+        .infographic:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(58, 166, 185, 0.15);
+        }
+
+        .step-process {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(58, 166, 185, 0.05);
+            border-radius: 15px;
+            border: 2px solid rgba(58, 166, 185, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .step:hover {
+            transform: scale(1.05);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), #2C7873);
+            color: white;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            line-height: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(58, 166, 185, 0.2);
+        }
+
+        .case-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 2.5rem 0;
+        }
+
+        .case {
+            padding: 1.8rem;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.95));
+            border-radius: 12px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            border-left: 6px solid transparent;
+        }
+
+        .case::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary-color);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .case:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(58, 166, 185, 0.1);
+        }
+
+        .case:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* Different colors for each case */
+        .case:nth-child(1) {
+            border-left-color: #3AA6B9; /* Fresh Blue */
+        }
+
+        .case:nth-child(2) {
+            border-left-color: #FFD700; /* Vibrant Yellow */
+        }
+
+        .case:nth-child(3) {
+            border-left-color: #90EE90; /* Natural Green */
+        }
+
+        .case:nth-child(4) {
+            border-left-color: #FF6F61; /* Coral Red */
+        }
+
+        .case:nth-child(5) {
+            border-left-color: #6B5B95; /* Violet */
+        }
+
+        .case:nth-child(6) {
+            border-left-color: #88B04B; /* Olive Green */
+        }
+
+        .case:nth-child(7) {
+            border-left-color: #F7CAC9; /* Pink */
+        }
+
+        .case:nth-child(8) {
+            border-left-color: #92A8D1; /* Light Blue */
+        }
+
+        .case a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .case a:hover {
+            color: var(--primary-color);
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), #2C7873);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-top: 6rem;
+            clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 4rem 1.5rem;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            nav a {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .card {
+                padding: 1.8rem;
+                margin: 1.8rem 0;
+            }
+
+            .step {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Data Mining Unveiled</h1>
+        <p>Discover Unexpected Value in Everyday Data</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#basic">🔍 Introduction to Data Mining</a></li>
+            <li><a href="#process">📋 Process Flow</a></li>
+            <li><a href="#life">💡 Life Applications</a></li>
+            <li><a href="#future">🚀 Future Outlook</a></li>
+            <li><a href="#exercises">📚 Data Analysis Practice Set</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Introduction to Data Mining -->
+        <section id="basic" class="card">
+            <a href="what-is-data-mining.html" target="_blank">
+                <h2>📌 What is Data Mining?</h2>
+            </a>
+            <div class="visual-guide">
+                <div class="infographic">
+                    <a href="https://www.bilibili.com/video/BV1354y1j7D3/?spm_id_from=333.337.search-card.all.click&vd_source=31b67e691bd443e3458ed4bd71a36a44" target="_blank">
+                        <h3>Data Detective</h3>
+                    </a>
+                    <p>Like detectives searching for truth in clues</p>
+                </div>
+                <div class="infographic">
+                    <a href="data-patterns.html" target="_blank">
+                        <h3>Pattern Discoverer</h3>
+                    </a>
+                    <p>Uncovering hidden data patterns</p>
+                </div>
+            </div>
+            <p>Data mining is like modern alchemy. In the crucible of the digital age, data scientists, like white-robed alchemists, wield algorithmic wands to process raw data in computational cauldrons. Seemingly chaotic clickstreams, sensor readings, and social media fragments are refined through feature engineering and machine learning models. Just as medieval alchemists pursued transmutation, today's data miners explore terabytes of "data ore," discovering behavioral gold veins through association rules, extracting high-value customer clusters, and forging decision-making gold bricks with predictive models.</p>
+        </section>
+
+        <!-- Process Flow -->
+        <section id="process" class="card">
+            <a href="data-mining-process.html" target="_blank">
+                <h2>🔧 Four-Step Data Mining Process</h2>
+            </a>
+            <div class="step-process">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Data Preparation</h3>
+                    <p>Cleaning and organizing raw data</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Pattern Discovery</h3>
+                    <p>Using algorithms to find patterns</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Validation</h3>
+                    <p>Confirming the reliability of findings</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Application</h3>
+                    <p>Transforming into practical value</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Life Applications -->
+        <section id="life" class="card">
+            <h2>🌍 Real-World Case Studies</h2>
+            <div class="case-showcase">
+                <div class="case">
+                    <a href="text1.html">Practical Work Assignment 1</a>
+                </div>
+                <div class="case">
+                    <a href="text2.html">Practical Work Assignment 2</a>
+                </div>
+                <div class="case">
+                    <a href="text3.html">Practical Work Assignment 3</a>
+                </div>
+                <div class="case">
+                    <a href="text4.html">Practical Work Assignment 4</a>
+                </div>
+                <div class="case">
+                    <a href="text5.html">Practical Work Assignment 5</a>
+                </div>
+                <div class="case">
+                    <a href="text6.html">Practical Work Assignment 6</a>
+                </div>
+                <div class="case">
+                    <a href="text7.html">Practical Work Assignment 7</a>
+                </div>
+                <div class="case">
+                    <a href="text8.html">Practical Work Assignment 8</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Future Outlook -->
+        <section id="future" class="card">
+            <a href="trend-list.html" target="_blank">
+                <h2>🔮 Future Trends</h2>
+            </a>
+            <ul class="trend-list">
+                <h3>🤖 Automated Data Mining</h3>
+                <h3>🌐 Real-Time Data Analysis</h3>
+                <h3>🔗 Cross-Domain Integration</h3>
+            </ul>
+        </section>
+
+        <!-- 数据分析练习题集 -->
+        <section id="exercises" class="card">	<a href="question.html" target="_blank">
+            <h2>📚 Data Analysis Practice Set</h2>
+		
+            <div class="table-responsive"></a>
+
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Data Mining Hub</p>
+        <a href="member.html">
+            <p>Team: Qiu Chongjia, Li Haonan, Xia Haohan</p>
+        </a>
+    </footer>
+</body>
+</html>
